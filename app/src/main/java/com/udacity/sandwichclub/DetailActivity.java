@@ -4,16 +4,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.JsonUtils;
 
+import java.util.List;
+
 public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
+
+    TextView mMainName;
+    TextView mAlsoKnownAs;
+    TextView mOrigin;
+    TextView mDescription;
+    TextView mIngredients;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +30,11 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         ImageView ingredientsIv = findViewById(R.id.image_iv);
+        mMainName = findViewById(R.id.mainName_tv);
+        mAlsoKnownAs = findViewById(R.id.also_known_tv);
+        mOrigin = findViewById(R.id.origin_tv);
+        mDescription = findViewById(R.id.description_tv);
+        mIngredients = findViewById(R.id.ingredients_tv);
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -43,7 +57,7 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
 
-        populateUI();
+        populateUI(sandwich);
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .into(ingredientsIv);
@@ -56,7 +70,43 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
-    private void populateUI() {
+    private void populateUI(Sandwich sandwich) {
 
+        mMainName.setText(dataMissing(sandwich.getMainName()));
+
+        List<String> alsoKnownList = sandwich.getAlsoKnownAs();
+        String listAlsoKnown = "";
+        for (String a : alsoKnownList) {
+            listAlsoKnown += a + ", ";
+        }
+        //remove the last comma
+        if (!listAlsoKnown.isEmpty()) {
+            listAlsoKnown = listAlsoKnown.substring(0, listAlsoKnown.length() - 2);
+        }
+        mAlsoKnownAs.setText(dataMissing(listAlsoKnown));
+
+        mOrigin.setText(dataMissing(sandwich.getPlaceOfOrigin()));
+
+        mDescription.setText(dataMissing(sandwich.getDescription()));
+
+        List<String> ingredientsList = sandwich.getIngredients();
+        String listIngredients = "";
+        for (String i : ingredientsList) {
+            listIngredients += i + ", ";
+        }
+        //remove the last comma
+        if (!listIngredients.isEmpty()) {
+            listIngredients = listIngredients.substring(0, listIngredients.length() - 2);
+        }
+        mIngredients.setText(dataMissing(listIngredients));
+    }
+
+    //This method checks the missing data
+    private String dataMissing(String s) {
+        if (s.isEmpty()) {
+            return getString(R.string.data_missing);
+        } else {
+            return s;
+        }
     }
 }
