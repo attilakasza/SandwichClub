@@ -18,7 +18,6 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
-    TextView mMainName;
     TextView mAlsoKnownAs;
     TextView mOrigin;
     TextView mDescription;
@@ -30,7 +29,6 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         ImageView ingredientsIv = findViewById(R.id.image_iv);
-        mMainName = findViewById(R.id.mainName_tv);
         mAlsoKnownAs = findViewById(R.id.also_known_tv);
         mOrigin = findViewById(R.id.origin_tv);
         mDescription = findViewById(R.id.description_tv);
@@ -71,8 +69,6 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI(Sandwich sandwich) {
-
-        mMainName.setText(dataMissing(sandwich.getMainName()));
 
         List<String> alsoKnownList = sandwich.getAlsoKnownAs();
         String listAlsoKnown = "";
