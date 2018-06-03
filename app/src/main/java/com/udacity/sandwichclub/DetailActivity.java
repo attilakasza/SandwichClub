@@ -106,4 +106,10 @@ public class DetailActivity extends AppCompatActivity {
             return s;
         }
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 }

@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,14 +44,12 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                launchDetailActivity(position);
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                intent.putExtra(DetailActivity.EXTRA_POSITION, position);
+                ActivityOptionsCompat options = ActivityOptionsCompat.
+                        makeSceneTransitionAnimation(MainActivity.this, view, getString(R.string.transition));
+                startActivity(intent,  options.toBundle());
             }
         });
-    }
-
-    private void launchDetailActivity(int position) {
-        Intent intent = new Intent(this, DetailActivity.class);
-        intent.putExtra(DetailActivity.EXTRA_POSITION, position);
-        startActivity(intent);
     }
 }
