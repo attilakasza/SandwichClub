@@ -112,4 +112,14 @@ public class DetailActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        startActivity(new Intent(this, MainActivity.class));
+        overridePendingTransition(
+                0,
+                R.animator.fade_out
+        );
+    }
 }
