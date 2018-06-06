@@ -1,8 +1,11 @@
 package com.udacity.sandwichclub;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,13 +28,26 @@ public class DetailActivity extends AppCompatActivity {
     @BindView(R.id.origin_tv) TextView mOrigin;
     @BindView(R.id.description_tv) TextView mDescription;
     @BindView(R.id.ingredients_tv) TextView mIngredients;
-    @BindView(R.id.image_iv) ImageView ingredientsIv;
+    @BindView(R.id.image_iv) ImageView mImageIv;
+    @BindView(R.id.toolbar) Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                            View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        }
+
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
+
+        setSupportActionBar(mToolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -58,7 +74,7 @@ public class DetailActivity extends AppCompatActivity {
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .placeholder(R.drawable.placeholder)
-                .into(ingredientsIv);
+                .into(mImageIv);
 
         setTitle(sandwich.getMainName());
     }
