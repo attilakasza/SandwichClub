@@ -1,8 +1,10 @@
 # Sandwich Club
 
-Udacity’s Android Developer Nanodegree project <br/>
+*Udacity’s Android Developer Nanodegree project* <br/>
 
-It shows the details of each sandwich once it is selected.
+This Android app allows users to discover the different types of most popular sandwiches around the world. It shows the <br/>
+details of each sandwich once it is selected. It contains a photo of and detailed information about every sandwich: place <br/>
+of origin, ingredients and a short description.
 
 ## Libraries
 
@@ -12,7 +14,6 @@ It shows the details of each sandwich once it is selected.
 
 ## Screenshots
 
-<br/>
 <br/>
 <img src="screenshots/screenshots.png">
 <br/>
