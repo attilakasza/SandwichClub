@@ -11,7 +11,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/tall_toolbar_height"
+        android:layout_height="@dimen/adl_app_bar_layout_height"
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -20,8 +20,8 @@
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:contentScrim="@color/colorPrimary"
-            app:expandedTitleMarginBottom="@dimen/land_title_bottom_margin"
-            app:expandedTitleMarginStart="@dimen/land_title_start_margin"
+            app:expandedTitleMarginBottom="@dimen/adl_collapsing_toolbar_layout_title_margin_bottom"
+            app:expandedTitleMarginStart="@dimen/adl_collapsing_toolbar_layout_title_margin_start"
             app:expandedTitleTextAppearance="@android:color/transparent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
@@ -60,23 +60,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        app:behavior_overlapTop="@dimen/top_overlap"
+        app:behavior_overlapTop="@dimen/adl_nested_scroll_view_overlap_top"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/card_bottom_margin"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            app:cardElevation="@dimen/card_elevation"
+            android:layout_marginBottom="@dimen/adl_card_view_margin_bottom"
+            android:layout_marginLeft="@dimen/adl_card_view_margin_left"
+            android:layout_marginRight="@dimen/adl_card_view_margin_right"
+            android:layout_marginTop="@dimen/adl_card_view_margin_top"
+            app:cardElevation="@dimen/adl_card_view_elevation"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_margin="@dimen/adl_linear_layout_margin"
                 android:orientation="vertical">
 
                 <TextView
@@ -89,7 +89,7 @@
                     android:id="@+id/also_known_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_bottom_margin" />
+                    android:layout_marginBottom="@dimen/adl_text_view_margin_bottom" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -101,7 +101,7 @@
                     android:id="@+id/origin_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_bottom_margin" />
+                    android:layout_marginBottom="@dimen/adl_text_view_margin_bottom" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -113,7 +113,7 @@
                     android:id="@+id/description_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_bottom_margin" />
+                    android:layout_marginBottom="@dimen/adl_text_view_margin_bottom" />
 
                 <TextView
                     android:layout_width="wrap_content"
