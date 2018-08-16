@@ -25,8 +25,8 @@
     <dimen name="adl_collapsing_toolbar_layout_title_margin_start">72dp</dimen>
     <dimen name="adl_nested_scroll_view_overlap_top">110dp</dimen>
     <dimen name="adl_card_view_margin_bottom">16dp</dimen>
-    <dimen name="adl_card_view_margin_left">64dp</dimen>
-    <dimen name="adl_card_view_margin_right">64dp</dimen>
+    <dimen name="adl_card_view_margin_end">64dp</dimen>
+    <dimen name="adl_card_view_margin_start">64dp</dimen>
     <dimen name="adl_card_view_margin_top">16dp</dimen>
     <dimen name="adl_card_view_elevation">5dp</dimen>
     <dimen name="adl_linear_layout_margin">16dp</dimen>
@@ -38,8 +38,8 @@
     <dimen name="adlv_collapsing_toolbar_layout_title_margin_start">72dp</dimen>
     <dimen name="adlv_nested_scroll_view_overlap_top">110dp</dimen>
     <dimen name="adlv_card_view_margin_bottom">16dp</dimen>
-    <dimen name="adlv_card_view_margin_left">64dp</dimen>
-    <dimen name="adlv_card_view_margin_right">64dp</dimen>
+    <dimen name="adlv_card_view_margin_end">64dp</dimen>
+    <dimen name="adlv_card_view_margin_start">64dp</dimen>
     <dimen name="adlv_card_view_margin_top">16dp</dimen>
     <dimen name="adlv_card_view_elevation">5dp</dimen>
     <dimen name="adlv_linear_layout_margin">16dp</dimen>
@@ -53,14 +53,14 @@
 
     <!-- activity_main_land -->
     <dimen name="aml_list_view_margin_bottom">16dp</dimen>
-    <dimen name="aml_list_view_margin_left">64dp</dimen>
-    <dimen name="aml_list_view_margin_right">64dp</dimen>
+    <dimen name="aml_list_view_margin_end">64dp</dimen>
+    <dimen name="aml_list_view_margin_start">64dp</dimen>
     <dimen name="aml_list_view_margin_top">16dp</dimen>
 
     <!-- activity_main_land_v21 -->
     <dimen name="amlv_list_view_margin_bottom">16dp</dimen>
-    <dimen name="amlv_list_view_margin_left">64dp</dimen>
-    <dimen name="amlv_list_view_margin_right">64dp</dimen>
+    <dimen name="amlv_list_view_margin_end">64dp</dimen>
+    <dimen name="amlv_list_view_margin_start">64dp</dimen>
     <dimen name="amlv_list_view_margin_top">16dp</dimen>
 
 </resources>

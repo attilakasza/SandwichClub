@@ -67,8 +67,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/adl_card_view_margin_bottom"
-            android:layout_marginLeft="@dimen/adl_card_view_margin_left"
-            android:layout_marginRight="@dimen/adl_card_view_margin_right"
+            android:layout_marginEnd="@dimen/adl_card_view_margin_end"
+            android:layout_marginLeft="@dimen/adl_card_view_margin_end"
+            android:layout_marginRight="@dimen/adl_card_view_margin_start"
+            android:layout_marginStart="@dimen/adl_card_view_margin_start"
             android:layout_marginTop="@dimen/adl_card_view_margin_top"
             app:cardElevation="@dimen/adl_card_view_elevation"
             app:cardUseCompatPadding="true">
